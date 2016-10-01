@@ -1,4 +1,7 @@
 ---
 
-- name: install nodejs
+- include: nodesource4_repo.yml
+
+- name: install node v4
   apt: name=nodejs
+#  apt: name=nodejs update_cache=yes
