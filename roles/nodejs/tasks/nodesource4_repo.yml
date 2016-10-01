@@ -3,7 +3,7 @@
 - name: add nodesource keys
   apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
 
-- name: install nodesource v4 repos
+- name: add nodesource v4 repos
   apt_repository: repo="deb https://deb.nodesource.com/node_4.x jessie main"
   with_items:
     - "deb https://deb.nodesource.com/node_4.x jessie main"
