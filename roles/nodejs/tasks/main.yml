@@ -4,4 +4,3 @@
 
 - name: install node v4
   apt: name=nodejs
-#  apt: name=nodejs update_cache=yes
