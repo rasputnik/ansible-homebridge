@@ -1,0 +1,10 @@
+---
+
+- name: install homebridge dependencies
+  apt: name={{ item }}
+  with_items:
+    - libavahi-compat-libdnssd-dev
+    - git
+
+- name: install homebridge
+  npm: global=yes name=homebridge
