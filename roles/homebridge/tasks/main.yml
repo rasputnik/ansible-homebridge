@@ -8,3 +8,19 @@
 
 - name: install homebridge
   npm: global=yes name=homebridge
+
+- name: add homebridge user
+  user: name=homebridge home={{ homebridge_dir }}
+        createhome=yes comment="HomeBridge"
+
+- name: add systemd unit and config
+  template: src=.{{ item }}.j2
+            dest={{ item }}
+            owner=root group=root mode=0444
+  with_items:
+    - "{{ homebridge_defaults }}"
+    - /etc/systemd/system/homebridge.service
+  notify: bounce homebridge
+
+- name: start homebridge
+  service: name=homebridge state=running enabled=yes
