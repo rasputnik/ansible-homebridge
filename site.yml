@@ -1,8 +1,7 @@
 ---
 
 - hosts: homekits
-  gather_facts: no
-  become: yes
+  gather_facts: yes
   roles:
     - nodejs
     - homebridge

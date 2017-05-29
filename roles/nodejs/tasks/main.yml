@@ -1,6 +1,14 @@
 ---
 
-- include: nodesource4_repo.yml
+- name: get {{ nodejs_tarball_url }}
+  get_url:
+    url: "{{ nodejs_tarball_url }}"
+    dest: "{{ nodejs_tarball_dest }}"
 
-- name: install node v4
-  apt: name=nodejs
+- name: extract {{ nodejs_tarball_dest }}
+  become: yes
+  unarchive:
+    remote_src: yes
+    src: "{{ nodejs_tarball_dest }}"
+    dest: "{{ nodejs_parent_dir }}"
+    creates: "{{ nodejs_dir }}"

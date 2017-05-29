@@ -1,4 +1,7 @@
 ---
 
 - name: bounce homebridge
-  service: name=homebridge state=restarted
+  become: yes
+  service:
+    name: homebridge
+    state: restarted

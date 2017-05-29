@@ -1,3 +1,3 @@
 homebridge_dir: /var/homebridge
-homebridge_bin: /usr/bin/homebridge
+homebridge_bin: "{{ nodejs_bindir }}/homebridge"
 homebridge_defaults: /etc/default/homebridge

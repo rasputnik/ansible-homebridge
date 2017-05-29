@@ -1,0 +1,10 @@
+---
+
+nodejs_version: "node-v6.10.3-linux-{{ ansible_architecture }}"
+nodejs_tarball: "{{ nodejs_version }}.tar.gz"
+nodejs_tarball_url: "https://nodejs.org/dist/v6.10.3/{{ nodejs_tarball }}"
+nodejs_tarball_dest: "/var/tmp/{{ nodejs_tarball }}"
+
+nodejs_parent_dir: /usr/local
+nodejs_dir: "{{ nodejs_parent_dir }}/{{ nodejs_version }}"
+nodejs_bindir: "{{ nodejs_dir }}/bin"
